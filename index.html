@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Link Cleaner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Link Cleaner</h1>
+        <p class="subtitle">Remove tracking parameters from Instagram links</p>
+
+        <div class="input-section">
+            <label for="input-url">Paste your Instagram link:</label>
+            <input
+                type="text"
+                id="input-url"
+                placeholder="https://www.instagram.com/p/ABC123/?igsh=xyz789"
+                autocomplete="off"
+            >
+            <button id="clean-btn">Clean Link</button>
+        </div>
+
+        <div class="output-section" id="output-section" style="display: none;">
+            <label>Cleaned link:</label>
+            <div class="output-wrapper">
+                <input type="text" id="output-url" readonly>
+                <button id="copy-btn">Copy</button>
+            </div>
+            <p class="status" id="status"></p>
+        </div>
+
+        <div class="info">
+            <h2>What gets removed?</h2>
+            <ul>
+                <li><code>igsh</code> / <code>igshid</code> - Instagram share tracking</li>
+                <li><code>utm_*</code> - Marketing/campaign tracking</li>
+                <li><code>fbclid</code> - Facebook click tracking</li>
+                <li>Other common tracking parameters</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
