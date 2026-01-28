@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Link Cleaner</title>
+    <title>Link Cleaner - Remove Tracking from Social Links</title>
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
@@ -30,14 +30,23 @@
             <span class="logo-icon">&#10024;</span>
         </div>
         <h1>Link Cleaner</h1>
-        <p class="subtitle">Strip tracking junk from Instagram URLs</p>
+        <p class="subtitle">Strip tracking junk from social media URLs</p>
+
+        <div class="platforms">
+            <span class="platform-tag">Instagram</span>
+            <span class="platform-tag">TikTok</span>
+            <span class="platform-tag">Facebook</span>
+            <span class="platform-tag">Threads</span>
+            <span class="platform-tag">X</span>
+            <span class="platform-tag">YouTube</span>
+        </div>
 
         <div class="input-section">
             <div class="input-wrapper">
                 <input
                     type="text"
                     id="input-url"
-                    placeholder="Paste your messy Instagram link here..."
+                    placeholder="Paste any social media link here..."
                     autocomplete="off"
                     spellcheck="false"
                 >
@@ -72,11 +81,12 @@
             <div class="info-content" id="info-content">
                 <div class="tag-list">
                     <span class="tag">igsh</span>
-                    <span class="tag">igshid</span>
-                    <span class="tag">utm_source</span>
-                    <span class="tag">utm_medium</span>
                     <span class="tag">fbclid</span>
-                    <span class="tag">+ more</span>
+                    <span class="tag">utm_*</span>
+                    <span class="tag">si</span>
+                    <span class="tag">_t</span>
+                    <span class="tag">gclid</span>
+                    <span class="tag">+ 40 more</span>
                 </div>
             </div>
         </div>

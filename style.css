@@ -120,8 +120,33 @@ h1 {
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
     font-size: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: 400;
+}
+
+/* Platform tags */
+.platforms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.platform-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+.platform-tag:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Input section */

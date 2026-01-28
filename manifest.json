@@ -1,7 +1,7 @@
 {
-  "name": "Instagram Link Cleaner",
+  "name": "Social Link Cleaner",
   "short_name": "Link Cleaner",
-  "description": "Strip tracking junk from Instagram URLs",
+  "description": "Strip tracking junk from Instagram, TikTok, Facebook, Threads, X, and YouTube URLs",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f0c29",
