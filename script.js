@@ -74,6 +74,8 @@ const outputSection = document.getElementById('output-section');
 const outputUrl = document.getElementById('output-url');
 const copyBtn = document.getElementById('copy-btn');
 const status = document.getElementById('status');
+const infoToggle = document.getElementById('info-toggle');
+const info = document.querySelector('.info');
 
 // Clean button click handler
 cleanBtn.addEventListener('click', () => {
@@ -81,17 +83,18 @@ cleanBtn.addEventListener('click', () => {
 
     if (!input) {
         showStatus('Please enter an Instagram URL', true);
+        outputSection.classList.remove('show');
         return;
     }
 
     try {
         const cleaned = cleanInstagramUrl(input);
         outputUrl.value = cleaned;
-        outputSection.style.display = 'block';
+        outputSection.classList.add('show');
         showStatus('');
     } catch (e) {
         showStatus(e.message, true);
-        outputSection.style.display = 'none';
+        outputSection.classList.remove('show');
     }
 });
 
@@ -104,14 +107,19 @@ inputUrl.addEventListener('keypress', (e) => {
 
 // Copy button click handler
 copyBtn.addEventListener('click', async () => {
+    const copyText = copyBtn.querySelector('.copy-text');
+
     try {
         await navigator.clipboard.writeText(outputUrl.value);
         showStatus('Copied to clipboard!');
 
         // Visual feedback
-        copyBtn.textContent = 'Copied!';
+        copyText.textContent = 'Copied!';
+        copyBtn.classList.add('copied');
+
         setTimeout(() => {
-            copyBtn.textContent = 'Copy';
+            copyText.textContent = 'Copy';
+            copyBtn.classList.remove('copied');
         }, 2000);
     } catch (e) {
         // Fallback for older browsers
@@ -119,6 +127,11 @@ copyBtn.addEventListener('click', async () => {
         document.execCommand('copy');
         showStatus('Copied to clipboard!');
     }
+});
+
+// Info toggle
+infoToggle.addEventListener('click', () => {
+    info.classList.toggle('open');
 });
 
 // Show status message
