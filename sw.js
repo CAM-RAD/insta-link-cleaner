@@ -1,4 +1,4 @@
-const CACHE_NAME = 'link-cleaner-v2';
+const CACHE_NAME = 'link-cleaner-v3';
 const ASSETS = [
   '/',
   '/index.html',

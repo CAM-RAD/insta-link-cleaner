@@ -130,6 +130,7 @@ const outputSection = document.getElementById('output-section');
 const outputUrl = document.getElementById('output-url');
 const outputLabel = document.querySelector('.output-label');
 const copyBtn = document.getElementById('copy-btn');
+const openBtn = document.getElementById('open-btn');
 const status = document.getElementById('status');
 const infoToggle = document.getElementById('info-toggle');
 const info = document.querySelector('.info');
@@ -182,6 +183,13 @@ copyBtn.addEventListener('click', async () => {
         outputUrl.select();
         document.execCommand('copy');
         showStatus('Copied to clipboard!');
+    }
+});
+
+// Open button click handler
+openBtn.addEventListener('click', () => {
+    if (outputUrl.value) {
+        window.open(outputUrl.value, '_blank');
     }
 });
 
